@@ -2,14 +2,24 @@ name: teste-pipeline
 on:
    workflow_dispatch:
 
-jobs: 
-    firtJob:
-      runs-on: ubuntu-latest
-      steps:
-      - name: Criando pasta no linux
-        run: echo "eu sou otimo" > eventos.txt
-      - name: Mostrar texto
-        run: cat eventos.txt
+jobs:
+  job_id: 
+   runs-on: ubuntu-latest
+   
+   steps:
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v2'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS_ISLEY}}'
+
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v2'
+
+    - name: 'Use gcloud CLI'
+      run: 'gcloud info'
+
+      
+      
         
       
       
