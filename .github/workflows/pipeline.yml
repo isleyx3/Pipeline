@@ -1,0 +1,18 @@
+name: teste-pipeline
+on:
+   workflow_dispatch:
+
+jobs: 
+    firtJob:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Criando pasta no linux
+      run: |
+      sudo pwd
+      sudo echo "eu sou otimo" > eventos.txt
+      
+      
+      
+      
+  
+  
