@@ -7,9 +7,11 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: Criando pasta no linux
-      run: |
-      sudo pwd
-      sudo echo "eu sou otimo" > eventos.txt
+        run: echo "eu sou otimo" > eventos.txt
+      - name: Mostrar texto
+        run: cat eventos.txt
+        
+      
       
       
       
