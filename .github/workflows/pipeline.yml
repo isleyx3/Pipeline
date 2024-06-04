@@ -3,7 +3,7 @@ on:
    workflow_dispatch:
 
 jobs:
-  job_id: 
+  contrucao-maquina: 
    runs-on: ubuntu-latest
    
    steps:
@@ -17,6 +17,9 @@ jobs:
 
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
+     
+    - name: 'Contrução da maquina'  
+      run: gcloud storage buckets create gs://teste-bucket-v3 --project=triplox3-services-prod --default-storage-class=STANDARD --location=us-central1 --uniform-bucket-level-access
 
       
       
